@@ -1,0 +1,12 @@
+// Map
+$breakpoints: (
+    md : 750px,
+    lg : 1320px
+);
+
+// Responsive
+@mixin responsive($breakpoint) {
+    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}

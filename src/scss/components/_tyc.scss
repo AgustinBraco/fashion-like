@@ -1,0 +1,22 @@
+@import '../base/mixin';
+
+.tyc-container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: justify;
+    gap: 2rem;
+    width: 80vw;
+    margin: auto;
+    padding-bottom: 4rem;
+
+    .tyc-h3 {
+        font-size: 2rem;
+        padding-top: 5rem;
+        text-decoration: underline;
+    }
+
+    .tyc-p {
+        font-size: 1.5rem;
+    }
+}
