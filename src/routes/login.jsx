@@ -1,15 +1,15 @@
 import Header from "../components/header/header.jsx";
 import Footer from "../components/footer/footer.jsx";
-import Error from "../components/error/error.jsx";
+import Login from "../components/login/login.jsx";
 
-function ErrorRoot() {
+function LoginRoot() {
     return (
         <div>
             <Header />
-            <Error />
+            <Login />
             <Footer />
         </div>
     );
 };
 
-export default ErrorRoot;
+export default LoginRoot;

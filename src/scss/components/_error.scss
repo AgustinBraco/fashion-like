@@ -11,10 +11,11 @@
 
     .error-icon {
         width: 15rem;
+        filter: grayscale(1);
     }
 
-    .error-title {
-        font-size: 3rem;
+    .error-message {
+        font-size: 2rem;
     }
 
     .error-text {
@@ -26,7 +27,7 @@
         width: 10rem;
         text-align: center;
         border-radius: 1rem;
-        background-color: var(--color-lblue);
+        background-color: var(--color-pink);
         color: var(--color-white);
         font-weight: 600;
         text-decoration: none;

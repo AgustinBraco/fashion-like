@@ -1,7 +1,10 @@
 @import 'base/general';
 @import 'base/mixin';
+@import 'components/error';
 @import 'components/header';
 @import 'components/footer';
-@import 'components/error';
 @import 'components/home';
-@import 'components/tyc';
+@import 'components/posts';
+@import 'components/login';
+@import 'components/register';
+@import 'components/management';

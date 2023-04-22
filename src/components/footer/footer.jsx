@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer>
-      <p className="footer-text">© María Begué 2023</p>
-      <Link to={"/tyc"} className="footer-link">Términos y Condiciones - Política de Privacidad</Link>
+      <Link to={"https://www.linkedin.com/in/agust%C3%ADn-braco/"} className="footer-link" target="blank">Frontend: Agustín Braco</Link>
+      <Link to={"https://www.linkedin.com/in/agust%C3%ADn-braco/"} className="footer-link" target="blank">Backend: Carlos Azira</Link>
+      <p className="footer-text">© 2023 all rights reserved.</p>
+      <p className="footer-text">No part of this site may be reproduced without our written permission.</p>
     </footer>
   );
 };

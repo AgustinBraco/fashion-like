@@ -1,13 +1,19 @@
 import './style.css';
 import React from 'react';
+import { CustomProvider } from './context/context.jsx';
+
+// Router DOM
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { CustomProvider } from './context/context.jsx';
 
 // Roots
 import ErrorRoot from './routes/error.jsx';
 import Root from './routes/root.jsx';
-import TycRoot from './routes/tyc.jsx';
+import Posts from './routes/posts.jsx';
+import Login from './routes/login.jsx';
+import Register from './routes/register.jsx';
+import Management from './routes/management.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -18,8 +24,20 @@ const router = createBrowserRouter([
     element: <Root />,
   },
   {
-    path: "/tyc",
-    element: <TycRoot />,
+    path: "/posts",
+    element: <Posts />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/management",
+    element: <Management />,
   },
 ]);
 

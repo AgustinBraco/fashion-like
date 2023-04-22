@@ -1,15 +1,15 @@
 import Header from "../components/header/header.jsx";
 import Footer from "../components/footer/footer.jsx";
-import Error from "../components/error/error.jsx";
+import Management from "../components/management/management.jsx";
 
-function ErrorRoot() {
+function ManagementRoot() {
     return (
         <div>
             <Header />
-            <Error />
+            <Management />
             <Footer />
         </div>
     );
 };
 
-export default ErrorRoot;
+export default ManagementRoot;

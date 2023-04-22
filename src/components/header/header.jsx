@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 
-// Linkedin correcto 
-// https://www.linkedin.com/in/mariabegue/
-
 function Header() {
-
   function displayNavbar() {
     const navbar = document.querySelector(".nav-bar-container");
     navbar.classList.toggle("open-navbar");
@@ -29,9 +25,7 @@ function Header() {
 
   return (
     <header>
-      <Link to={"https://www.linkedin.com/in/agust%C3%ADn-braco/"} target="blank"><img src="assets/icons/linkedin.png" alt="icon-linkedin" className="header-linkedin"/></Link>
-
-      <Link to={"/"}><img src="assets/icons/logo.png" alt="logo-maria-begue" className="header-logo"/></Link>
+      <Link to={"/"}><img src="assets/images/logo.png" alt="logo" className="header-logo"/></Link>
 
       <button className="header-menu-mobile-button" onClick={displayNavbar}>
         <img src="assets/icons/menu-mobile.png" alt="icon-menu-mobile" className="header-menu-mobile"/>
@@ -43,10 +37,10 @@ function Header() {
         </button>
 
         <ul className="nav-bar">
-          <li><Link className="nav-bar-link" to={"/"}>Inicio</Link></li>
-          <li><Link className="nav-bar-link">Contenido</Link></li>
-          <li><Link className="nav-bar-link">Artículos</Link></li>
-          <li><Link className="nav-bar-link-lblue">Curso</Link></li>
+          <li><Link className="nav-bar-link" to={"/posts"}>Posts</Link></li>
+          <li><Link className="nav-bar-link" to={"/login"}>Login</Link></li>
+          <li><Link className="nav-bar-link" to={"/register"}>Register</Link></li>
+          <li className="admin-link"><Link className="nav-bar-link-yellow" to={"/management"}>Management</Link></li>
         </ul>
       </nav>
 

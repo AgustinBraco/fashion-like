@@ -15,14 +15,9 @@ header {
     -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
 
-    .header-linkedin {
-        width: 3rem;
-        margin: 2rem;
-    }
-
     .header-logo {
-        width: 15rem;
-        margin: 2rem;
+        width: 9rem;
+        margin: 1rem;
     }
 
     .header-menu-mobile-button {
@@ -32,6 +27,7 @@ header {
         .header-menu-mobile {
             width: 3.5rem;
             margin: 2rem;
+            filter: invert(52%) sepia(69%) saturate(1186%) hue-rotate(298deg) brightness(98%) contrast(92%);
         }
     }
 
@@ -41,8 +37,9 @@ header {
         padding: 0.7rem;
 
         .header-menu-mobile-close {
-            width: 2rem;
-            margin: 2rem;
+            width: 2.5rem;
+            margin: 1.8rem;
+            filter: invert(52%) sepia(69%) saturate(1186%) hue-rotate(298deg) brightness(98%) contrast(92%);
         }
     }
 
@@ -54,7 +51,7 @@ header {
             flex-flow: row nowrap;
             justify-content: space-around;
             width: 100vw;
-            height: 10vh;
+            height: 8vh;
             background-color: var(--color-white);
             position: absolute;
             padding-top: 2rem;
@@ -65,19 +62,21 @@ header {
             .nav-bar-link {
                 text-decoration: none;
                 font-size: 2rem;
-                color: var(--color-lblue);
+                color: var(--color-pink);
                 background-color: var(--color-white);
-                font-weight: 700;
+                font-weight: 600;
             }
 
-            .nav-bar-link-lblue {
+            .nav-bar-link-yellow {
                 text-decoration: none;
                 font-size: 2rem;
-                color: var(--color-white);
-                background-color: var(--color-lblue);
-                font-weight: 700;
-                padding: 0.5rem;
-                border-radius: 1rem;
+                color: var(--color-yellow);
+                background-color: var(--color-white);
+                font-weight: 600;
+            }
+
+            .admin-link {
+                display: none;
             }
         }   
     }

@@ -1,15 +1,15 @@
 import Header from "../components/header/header.jsx";
 import Footer from "../components/footer/footer.jsx";
-import Error from "../components/error/error.jsx";
+import Posts from "../components/posts/posts.jsx";
 
-function ErrorRoot() {
+function PostsRoot() {
     return (
         <div>
             <Header />
-            <Error />
+            <Posts />
             <Footer />
         </div>
     );
 };
 
-export default ErrorRoot;
+export default PostsRoot;
