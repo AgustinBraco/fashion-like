@@ -39,4 +39,5 @@
 <br>
 
 ## FRONTEND
-### Desarrollado con HTML, SASS (preprocesador de CSS) y REACT JAVASCRIPT.
+### Desarrollado con REACT JAVASCRIPT.
+#### Dependencias: Node, NPM, Vite, SASS y Router DOM.
