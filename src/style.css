@@ -1,11 +1,11 @@
 /* Font */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
 /* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif, Helvetica, Arial;
+  font-family: "Playfair Display", serif, sans-serif, Helvetica, Arial;
 }
 
 /* Root */
@@ -16,10 +16,8 @@ html {
 
 /* Colors */
 :root {
-  --color-pink: #ef62a3;
-  --color-yellow: #ffcc29;
-  --color-grey: #2F2E2E;
   --color-black: #000000;
+  --color-grey: #DFDBE0;
   --color-white: #FFFFFF;
 }
 
@@ -49,7 +47,7 @@ html {
   border-radius: 1rem;
   background-color: var(--color-pink);
   color: var(--color-white);
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -79,7 +77,6 @@ header .header-menu-mobile-button {
 header .header-menu-mobile-button .header-menu-mobile {
   width: 3.5rem;
   margin: 2rem;
-  filter: invert(52%) sepia(69%) saturate(1186%) hue-rotate(298deg) brightness(98%) contrast(92%);
 }
 header .header-menu-mobile-close-button {
   background-color: transparent;
@@ -89,37 +86,37 @@ header .header-menu-mobile-close-button {
 header .header-menu-mobile-close-button .header-menu-mobile-close {
   width: 2.5rem;
   margin: 1.8rem;
-  filter: invert(52%) sepia(69%) saturate(1186%) hue-rotate(298deg) brightness(98%) contrast(92%);
 }
 header .nav-bar-container {
   display: none;
 }
 header .nav-bar-container .nav-bar {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
+  flex-flow: column nowrap;
+  justify-content: center;
+  gap: 10rem;
+  text-align: center;
   width: 100vw;
-  height: 8vh;
-  background-color: var(--color-white);
+  height: 90vh;
+  background-color: var(--color-grey);
   position: absolute;
   padding-top: 2rem;
-  left: 0;
-  top: 8rem;
+  right: 0;
+  top: 9.2rem;
   list-style: none;
 }
 header .nav-bar-container .nav-bar .nav-bar-link {
   text-decoration: none;
-  font-size: 2rem;
-  color: var(--color-pink);
-  background-color: var(--color-white);
-  font-weight: 600;
+  font-size: 4rem;
+  color: var(--color-black);
+  font-weight: 900;
+  letter-spacing: 1rem;
 }
-header .nav-bar-container .nav-bar .nav-bar-link-yellow {
-  text-decoration: none;
-  font-size: 2rem;
-  color: var(--color-yellow);
-  background-color: var(--color-white);
-  font-weight: 600;
+header .nav-bar-container .nav-bar .nav-bar-link-grey {
+  text-decoration: underline;
+  font-size: 3rem;
+  color: var(--color-black);
+  font-weight: 900;
 }
 header .nav-bar-container .nav-bar .admin-link {
   display: none;
@@ -130,24 +127,156 @@ header .open-navbar {
 
 footer {
   width: 100vw;
-  height: 12vh;
-  position: relative;
-  bottom: 0;
+  height: 10vh;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   text-align: center;
-  background-color: #2F2E2E;
+  background-color: var(--color-grey);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.05'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E");
 }
-footer .footer-link {
+footer .footer-up-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-inline: 2rem;
+  margin-block: 1rem;
+}
+footer .footer-up-container .footer-job {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: underline;
+}
+footer .footer-up-container .footer-link {
   font-size: 1.8rem;
-  color: var(--color-white);
+  font-weight: 600;
+  color: var(--color-black);
   text-decoration: none;
-  margin-bottom: 0.5rem;
 }
 footer .footer-text {
+  color: var(--color-black);
+  font-size: 1.1rem;
+}
+
+.section-banner {
+  width: 100vw;
+}
+.section-banner .banner-mobile-container {
+  height: 55vh;
+}
+.section-banner .banner-mobile-container .banner-mobile-image {
+  width: 100%;
+  height: 100%;
+}
+.section-banner .banner-desktop-container {
+  display: none;
+}
+.section-banner .banner-desktop-container .banner-desktop-image {
+  width: 100%;
+  height: 100%;
+}
+
+.section-intro {
+  border-top: 3px solid var(--color-grey);
+  width: 100vw;
+  margin-block: -0.2rem;
+  display: flex;
+  justify-content: space-around;
+}
+.section-intro .intro-title-container {
+  background-color: var(--color-grey);
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-intro .intro-title-container .intro-title {
+  font-size: 3.2rem;
+  text-align: center;
+  font-weight: 800;
+  text-decoration: line-through;
+}
+.section-intro .intro-text-container {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-intro .intro-text-container .intro-text {
+  font-size: 1.6rem;
+  margin: 2rem;
+  text-align: justify;
+  font-weight: 500;
+}
+
+.section-interest {
+  border-top: 3px solid var(--color-grey);
+  width: 100vw;
+  margin-block: -0.2rem;
+  display: flex;
+  justify-content: space-around;
+}
+.section-interest .interest-texts-container {
+  width: 70%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.section-interest .interest-texts-container .interest-text {
+  font-size: 1.6rem;
+  margin: 2rem;
+  text-align: justify;
+  font-weight: 500;
+}
+.section-interest .interest-link-container {
+  background-color: var(--color-grey);
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-interest .interest-link-container .interest-link {
+  font-size: 3.5rem;
   color: var(--color-white);
+  font-weight: 800;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-decoration: underline;
+}
+
+.section-register {
+  border-top: 3px solid var(--color-grey);
+  width: 100vw;
+  margin-block: -0.2rem;
+  display: flex;
+  justify-content: space-around;
+}
+.section-register .register-link-container {
+  background-color: var(--color-grey);
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-register .register-link-container .register-link {
+  font-size: 3rem;
+  color: var(--color-white);
+  font-weight: 800;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-decoration: underline;
+}
+.section-register .register-texts-container {
+  width: 70%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.section-register .register-texts-container .register-text {
+  font-size: 1.6rem;
+  margin: 2rem;
+  text-align: justify;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=style.css.map */

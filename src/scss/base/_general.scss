@@ -1,12 +1,12 @@
 /* Font */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 /* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif, Helvetica, Arial;
+  font-family: 'Playfair Display', serif, sans-serif, Helvetica, Arial;
 }
 
 /* Root */
@@ -18,9 +18,7 @@ html {
 
 /* Colors */
 :root {
-  --color-pink: #ef62a3;
-  --color-yellow: #ffcc29;
-  --color-grey: #2F2E2E;
   --color-black: #000000;
+  --color-grey: #DFDBE0;
   --color-white: #FFFFFF;
 }

@@ -27,7 +27,6 @@ header {
         .header-menu-mobile {
             width: 3.5rem;
             margin: 2rem;
-            filter: invert(52%) sepia(69%) saturate(1186%) hue-rotate(298deg) brightness(98%) contrast(92%);
         }
     }
 
@@ -39,7 +38,6 @@ header {
         .header-menu-mobile-close {
             width: 2.5rem;
             margin: 1.8rem;
-            filter: invert(52%) sepia(69%) saturate(1186%) hue-rotate(298deg) brightness(98%) contrast(92%);
         }
     }
 
@@ -48,31 +46,32 @@ header {
 
         .nav-bar {
             display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-around;
+            flex-flow: column nowrap;
+            justify-content: center;
+            gap: 10rem;
+            text-align: center;
             width: 100vw;
-            height: 8vh;
-            background-color: var(--color-white);
+            height: 90vh;
+            background-color: var(--color-grey);
             position: absolute;
             padding-top: 2rem;
-            left: 0;
-            top: 8rem;
+            right: 0;
+            top: 9.2rem;
             list-style: none;
     
             .nav-bar-link {
                 text-decoration: none;
-                font-size: 2rem;
-                color: var(--color-pink);
-                background-color: var(--color-white);
-                font-weight: 600;
+                font-size: 4rem;
+                color: var(--color-black);
+                font-weight: 900;
+                letter-spacing: 1rem;
             }
 
-            .nav-bar-link-yellow {
-                text-decoration: none;
-                font-size: 2rem;
-                color: var(--color-yellow);
-                background-color: var(--color-white);
-                font-weight: 600;
+            .nav-bar-link-grey {
+                text-decoration: underline;
+                font-size: 3rem;
+                color: var(--color-black);
+                font-weight: 900;
             }
 
             .admin-link {

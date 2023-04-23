@@ -12,6 +12,7 @@ import Root from './routes/root.jsx';
 import Posts from './routes/posts.jsx';
 import Login from './routes/login.jsx';
 import Register from './routes/register.jsx';
+import Contact from './routes/contact.jsx';
 import Management from './routes/management.jsx';
 
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
   },
   {
     path: "/management",
