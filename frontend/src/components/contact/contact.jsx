@@ -1,9 +1,9 @@
 function Contact() {
-    return (
-      <main>
-        <p>CONTACT</p>
-      </main>
-    );
-  };
+  return (
+    <main className="contact-main">
+      <p>CONTACT</p>
+    </main>
+  );
+};
   
-  export default Contact;
+export default Contact;

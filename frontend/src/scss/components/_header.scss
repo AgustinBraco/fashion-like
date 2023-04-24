@@ -47,21 +47,21 @@ header {
         .nav-bar {
             display: flex;
             flex-flow: column nowrap;
-            justify-content: center;
-            gap: 10rem;
+            justify-content: start;
+            gap: 9rem;
             text-align: center;
             width: 100vw;
-            height: 90vh;
+            height: 100vh;
             background-color: var(--color-grey);
             position: absolute;
-            padding-top: 2rem;
             right: 0;
-            top: 9.2rem;
+            top: 6.5rem;
             list-style: none;
+            padding-top: 5rem;
     
             .nav-bar-link {
                 text-decoration: none;
-                font-size: 4rem;
+                font-size: 3.5rem;
                 color: var(--color-black);
                 font-weight: 900;
                 letter-spacing: 1rem;

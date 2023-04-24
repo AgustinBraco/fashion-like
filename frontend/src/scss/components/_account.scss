@@ -1,10 +1,10 @@
 @import '../base/mixin';
 
-.login-main {
+.account-main {
     width: 100vw;
     height: 80vh;
 
-    .login-container {
+    .account-container {
         width: 100vw;
         height: 80vh;
         display: flex;
@@ -13,17 +13,17 @@
         justify-content: center;
         gap: 3rem;
     
-        .login-icon {
+        .account-icon {
             width: 15rem;
             filter: grayscale(1);
         }
     
-        .login-text {
+        .account-text {
             font-size: 2rem;
             text-align: center;
         }
     
-        .login-link {
+        .account-link {
             font-size: 2.5rem;
             width: 15rem;
             text-align: center;

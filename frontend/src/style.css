@@ -45,8 +45,8 @@ html {
   width: 10rem;
   text-align: center;
   border-radius: 1rem;
-  background-color: var(--color-pink);
-  color: var(--color-white);
+  background-color: var(--color-black);
+  color: var(--color-grey);
   font-weight: 500;
   text-decoration: none;
 }
@@ -93,21 +93,21 @@ header .nav-bar-container {
 header .nav-bar-container .nav-bar {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-  gap: 10rem;
+  justify-content: start;
+  gap: 9rem;
   text-align: center;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   background-color: var(--color-grey);
   position: absolute;
-  padding-top: 2rem;
   right: 0;
-  top: 9.2rem;
+  top: 6.5rem;
   list-style: none;
+  padding-top: 5rem;
 }
 header .nav-bar-container .nav-bar .nav-bar-link {
   text-decoration: none;
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: var(--color-black);
   font-weight: 900;
   letter-spacing: 1rem;
@@ -277,6 +277,220 @@ footer .footer-text {
   margin: 2rem;
   text-align: justify;
   font-weight: 500;
+}
+
+.posts-main {
+  width: 100vw;
+  height: 80vh;
+}
+.posts-main .posts-container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.posts-main .posts-container .posts-icon {
+  width: 15rem;
+  filter: grayscale(1);
+}
+.posts-main .posts-container .posts-text {
+  font-size: 2rem;
+  text-align: center;
+  margin-inline: 2rem;
+}
+.posts-main .posts-container .posts-link {
+  font-size: 2.5rem;
+  width: 15rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: var(--color-black);
+  color: var(--color-grey);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-main {
+  width: 100vw;
+  height: 80vh;
+}
+.login-main .login-container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.login-main .login-container .login-icon {
+  width: 15rem;
+  filter: grayscale(1);
+}
+.login-main .login-container .login-text {
+  font-size: 2rem;
+  text-align: center;
+}
+.login-main .login-container .login-link {
+  font-size: 2.5rem;
+  width: 15rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: var(--color-black);
+  color: var(--color-grey);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.register-main {
+  width: 100vw;
+  height: 80vh;
+}
+.register-main .registered-container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.register-main .registered-container .registered-icon {
+  width: 15rem;
+  filter: grayscale(1);
+}
+.register-main .registered-container .registered-text {
+  font-size: 2rem;
+  text-align: center;
+}
+.register-main .registered-container .registered-link {
+  font-size: 2.5rem;
+  width: 15rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: var(--color-black);
+  color: var(--color-grey);
+  font-weight: 500;
+  text-decoration: none;
+}
+.register-main .register-background {
+  position: absolute;
+  width: 100vw;
+  height: 80vh;
+  background-image: url("assets/images/background-register-mobile.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(0.3rem);
+}
+.register-main .register-container {
+  position: absolute;
+  background-color: rgba(223, 219, 224, 0.6549019608);
+  width: 80vw;
+  height: 70vh;
+  border-radius: 2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.register-main .register-container .register-title {
+  font-size: 3rem;
+  font-weight: 800;
+  height: 5%;
+  margin-block: 2rem;
+}
+.register-main .register-container .form {
+  height: 95%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.register-main .register-container .form .form-label {
+  width: 70%;
+  text-align: start;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+}
+.register-main .register-container .form .form-input {
+  width: 70%;
+  height: 3rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-grey);
+  transition: ease all 0.5s;
+  font-size: 1.8rem;
+  color: var(--color-white);
+  padding-left: 0.5rem;
+}
+.register-main .register-container .form .form-input:focus {
+  outline: none;
+  transform: translateX(10%);
+  border-bottom: 2px solid var(--color-white);
+}
+.register-main .register-container .form .form-input::placeholder {
+  font-size: 1.5rem;
+}
+.register-main .register-container .form .form-input-phone::-webkit-inner-spin-button {
+  display: none;
+}
+.register-main .register-container .form .form-button {
+  width: 40%;
+  background-color: var(--color-white);
+  border: 0;
+  height: 3.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+}
+
+.account-main {
+  width: 100vw;
+  height: 80vh;
+}
+.account-main .account-container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.account-main .account-container .account-icon {
+  width: 15rem;
+  filter: grayscale(1);
+}
+.account-main .account-container .account-text {
+  font-size: 2rem;
+  text-align: center;
+}
+.account-main .account-container .account-link {
+  font-size: 2.5rem;
+  width: 15rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: var(--color-black);
+  color: var(--color-grey);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-main {
+  width: 100vw;
+  height: 80vh;
 }
 
 /*# sourceMappingURL=style.css.map */
