@@ -8,17 +8,23 @@
   font-family: "Playfair Display", serif, sans-serif, Helvetica, Arial;
 }
 
-/* Root */
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
-
 /* Colors */
 :root {
   --color-black: #000000;
   --color-grey: #DFDBE0;
+  --color-wheat: #d5d0cd;
   --color-white: #FFFFFF;
+}
+
+/* Root */
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }
 
 .error-container {
@@ -66,6 +72,14 @@ header {
   -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
 }
+header .top-bar {
+  height: 0.5rem;
+  transition: all linear 0.2s;
+  background-color: var(--color-black);
+  position: absolute;
+  top: 0;
+  margin-top: -0.1rem;
+}
 header .header-logo {
   width: 9rem;
   margin: 1rem;
@@ -111,15 +125,6 @@ header .nav-bar-container .nav-bar .nav-bar-link {
   color: var(--color-black);
   font-weight: 900;
   letter-spacing: 1rem;
-}
-header .nav-bar-container .nav-bar .nav-bar-link-grey {
-  text-decoration: underline;
-  font-size: 3rem;
-  color: var(--color-black);
-  font-weight: 900;
-}
-header .nav-bar-container .nav-bar .admin-link {
-  display: none;
 }
 header .open-navbar {
   display: flex;
@@ -312,11 +317,11 @@ footer .footer-text {
   text-decoration: none;
 }
 
-.login-main {
+.loged-main {
   width: 100vw;
   height: 80vh;
 }
-.login-main .login-container {
+.loged-main .loged-container {
   width: 100vw;
   height: 80vh;
   display: flex;
@@ -325,15 +330,135 @@ footer .footer-text {
   justify-content: center;
   gap: 3rem;
 }
-.login-main .login-container .login-icon {
+.loged-main .loged-container .loged-icon {
   width: 15rem;
   filter: grayscale(1);
 }
-.login-main .login-container .login-text {
+.loged-main .loged-container .loged-text {
   font-size: 2rem;
   text-align: center;
 }
-.login-main .login-container .login-link {
+.loged-main .loged-container .loged-link {
+  font-size: 2.5rem;
+  width: 15rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: var(--color-black);
+  color: var(--color-grey);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-main {
+  width: 100vw;
+  height: 80vh;
+}
+.login-main .login-background {
+  position: absolute;
+  width: 100vw;
+  height: 80vh;
+  background-image: url("assets/images/background-login-mobile.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(0.15rem);
+}
+.login-main .login-container {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6549019608);
+  width: 80vw;
+  height: 40vh;
+  border-radius: 2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  overflow: hidden;
+}
+.login-main .login-container .login-title {
+  font-size: 3rem;
+  font-weight: 800;
+  height: 5%;
+  margin-block: 3rem;
+  color: var(--color-white);
+  letter-spacing: 1rem;
+}
+.login-main .login-container .login-form {
+  height: 95%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.login-main .login-container .login-form .login-form-label {
+  width: 70%;
+  text-align: start;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  color: var(--color-white);
+}
+.login-main .login-container .login-form .login-form-input {
+  width: 70%;
+  height: 3rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-grey);
+  transition: ease all 0.5s;
+  font-size: 1.8rem;
+  color: var(--color-white);
+  padding-left: 0.5rem;
+}
+.login-main .login-container .login-form .login-form-input:focus {
+  outline: none;
+  transform: translateX(10%);
+  border-bottom: 2px solid var(--color-white);
+}
+.login-main .login-container .login-form .login-form-input::placeholder {
+  font-size: 1.5rem;
+}
+.login-main .login-container .login-form .login-form-input-phone::-webkit-inner-spin-button {
+  display: none;
+}
+.login-main .login-container .login-form .login-form-button {
+  width: 40%;
+  background-color: var(--color-white);
+  border: 0;
+  height: 3.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  margin-block: 1rem;
+}
+
+.registered-main {
+  width: 100vw;
+  height: 80vh;
+}
+.registered-main .registered-container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.registered-main .registered-container .registered-icon {
+  width: 15rem;
+  filter: grayscale(1);
+}
+.registered-main .registered-container .registered-text {
+  font-size: 2rem;
+  text-align: center;
+}
+.registered-main .registered-container .registered-link {
   font-size: 2.5rem;
   width: 15rem;
   text-align: center;
@@ -348,45 +473,19 @@ footer .footer-text {
   width: 100vw;
   height: 80vh;
 }
-.register-main .registered-container {
-  width: 100vw;
-  height: 80vh;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: 3rem;
-}
-.register-main .registered-container .registered-icon {
-  width: 15rem;
-  filter: grayscale(1);
-}
-.register-main .registered-container .registered-text {
-  font-size: 2rem;
-  text-align: center;
-}
-.register-main .registered-container .registered-link {
-  font-size: 2.5rem;
-  width: 15rem;
-  text-align: center;
-  border-radius: 1rem;
-  background-color: var(--color-black);
-  color: var(--color-grey);
-  font-weight: 500;
-  text-decoration: none;
-}
 .register-main .register-background {
   position: absolute;
   width: 100vw;
   height: 80vh;
   background-image: url("assets/images/background-register-mobile.jpg");
   background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
-  filter: blur(0.3rem);
+  filter: blur(0.15rem);
 }
 .register-main .register-container {
   position: absolute;
-  background-color: rgba(223, 219, 224, 0.6549019608);
+  background-color: rgba(0, 0, 0, 0.6549019608);
   width: 80vw;
   height: 70vh;
   border-radius: 2rem;
@@ -406,8 +505,10 @@ footer .footer-text {
   font-weight: 800;
   height: 5%;
   margin-block: 2rem;
+  color: var(--color-white);
+  letter-spacing: 1rem;
 }
-.register-main .register-container .form {
+.register-main .register-container .register-form {
   height: 95%;
   display: flex;
   flex-flow: column nowrap;
@@ -415,15 +516,16 @@ footer .footer-text {
   justify-content: space-between;
   margin-bottom: 1rem;
 }
-.register-main .register-container .form .form-label {
+.register-main .register-container .register-form .register-form-label {
   width: 70%;
   text-align: start;
   font-size: 2rem;
   font-weight: 500;
   margin-top: 1rem;
   margin-bottom: -1rem;
+  color: var(--color-white);
 }
-.register-main .register-container .form .form-input {
+.register-main .register-container .register-form .register-form-input {
   width: 70%;
   height: 3rem;
   background-color: transparent;
@@ -434,18 +536,18 @@ footer .footer-text {
   color: var(--color-white);
   padding-left: 0.5rem;
 }
-.register-main .register-container .form .form-input:focus {
+.register-main .register-container .register-form .register-form-input:focus {
   outline: none;
   transform: translateX(10%);
   border-bottom: 2px solid var(--color-white);
 }
-.register-main .register-container .form .form-input::placeholder {
+.register-main .register-container .register-form .register-form-input::placeholder {
   font-size: 1.5rem;
 }
-.register-main .register-container .form .form-input-phone::-webkit-inner-spin-button {
+.register-main .register-container .register-form .register-form-input-phone::-webkit-inner-spin-button {
   display: none;
 }
-.register-main .register-container .form .form-button {
+.register-main .register-container .register-form .register-form-button {
   width: 40%;
   background-color: var(--color-white);
   border: 0;
@@ -490,7 +592,155 @@ footer .footer-text {
 
 .contact-main {
   width: 100vw;
+}
+.contact-main .contact-image {
+  background-image: url("assets/images/test-1.jpg");
+  height: 25vh;
+  background-size: cover;
+}
+.contact-main .contact-container {
+  background-color: var(--color-wheat);
+  width: 100vw;
   height: 80vh;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  overflow: hidden;
+  padding-block: 3rem;
+  border-top: dashed 2px black;
+}
+.contact-main .contact-container .contact-title {
+  font-size: 3rem;
+  font-weight: 800;
+  height: 5%;
+  margin-block: 2rem;
+  color: var(--color-black);
+  letter-spacing: 1rem;
+}
+.contact-main .contact-container .contact-form {
+  height: 95%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.contact-main .contact-container .contact-form .contact-form-label {
+  width: 70%;
+  text-align: start;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+  color: var(--color-black);
+}
+.contact-main .contact-container .contact-form .contact-form-input {
+  width: 70%;
+  height: 3rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-grey);
+  transition: ease all 0.5s;
+  font-size: 1.8rem;
+  color: var(--color-black);
+  padding-left: 0.5rem;
+}
+.contact-main .contact-container .contact-form .contact-form-input:focus {
+  outline: none;
+  transform: translateX(10%);
+  border-bottom: 2px solid var(--color-black);
+}
+.contact-main .contact-container .contact-form .contact-form-input::placeholder {
+  font-size: 1.5rem;
+  height: 5rem;
+}
+.contact-main .contact-container .contact-form .contact-form-textarea {
+  resize: vertical;
+  width: 70%;
+  height: 8rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-grey);
+  transition: ease all 0.5s;
+  font-size: 1.8rem;
+  color: var(--color-black);
+  padding-left: 0.5rem;
+}
+.contact-main .contact-container .contact-form .contact-form-textarea:focus {
+  outline: none;
+  transform: translateX(10%);
+  border-bottom: 2px solid var(--color-black);
+}
+.contact-main .contact-container .contact-form .contact-form-input-phone::-webkit-inner-spin-button {
+  display: none;
+}
+.contact-main .contact-container .contact-form .contact-form-button {
+  width: 30%;
+  background-color: var(--color-black);
+  color: var(--color-grey);
+  border: 0;
+  height: 4rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  margin-top: 0.5rem;
+}
+.contact-main .contact-map-container {
+  background-color: var(--color-wheat);
+  width: 100vw;
+  margin-top: -0.1rem;
+}
+.contact-main .contact-map-container .contact-map-text {
+  font-size: 3rem;
+  padding: 5rem 0rem 2rem 2rem;
+  letter-spacing: 0.2rem;
+  text-decoration: underline;
+}
+.contact-main .contact-map-container .contact-map {
+  width: 100vw;
+  height: 50vh;
+  border: 0;
+  filter: grayscale(1);
+}
+
+.manager-main {
+  width: 100vw;
+  height: 80vh;
+}
+
+.management-main {
+  width: 100vw;
+  height: 80vh;
+}
+.management-main .management-container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.management-main .management-container .management-icon {
+  width: 15rem;
+  filter: grayscale(1);
+}
+.management-main .management-container .management-text {
+  font-size: 2rem;
+  text-align: center;
+  margin-inline: 2rem;
+}
+.management-main .management-container .management-link {
+  font-size: 2.5rem;
+  width: 11rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: var(--color-black);
+  color: var(--color-grey);
+  font-weight: 500;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=style.css.map */

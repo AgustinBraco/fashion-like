@@ -1,6 +1,6 @@
 @import '../base/mixin';
 
-.register-main {
+.registered-main {
     width: 100vw;
     height: 80vh;
 
@@ -34,6 +34,11 @@
             text-decoration: none;
         }
     }
+}
+
+.register-main {
+    width: 100vw;
+    height: 80vh;
 
     .register-background {
         position: absolute;
@@ -41,13 +46,14 @@
         height: 80vh;
         background-image: url("assets/images/background-register-mobile.jpg");
         background-position: center;
+        background-size: cover;
         background-repeat: no-repeat;
-        filter: blur(0.3rem);
+        filter: blur(0.15rem);
     }
     
     .register-container {
         position: absolute;
-        background-color: #dfdbe0a7;
+        background-color: #000000a7;
         width: 80vw;
         height: 70vh;
         border-radius: 2rem;
@@ -67,9 +73,11 @@
             font-weight: 800;
             height: 5%;
             margin-block: 2rem;
+            color: var(--color-white);
+            letter-spacing: 1rem;
         }
     
-        .form {
+        .register-form {
             height: 95%;
             display: flex;
             flex-flow: column nowrap;
@@ -77,16 +85,17 @@
             justify-content: space-between;
             margin-bottom: 1rem;
     
-            .form-label {
+            .register-form-label {
                 width: 70%;
                 text-align: start;
                 font-size: 2rem;
                 font-weight: 500;
                 margin-top: 1rem;
                 margin-bottom: -1rem;
+                color: var(--color-white);
             }
     
-            .form-input {
+            .register-form-input {
                 width: 70%;
                 height: 3rem;
                 background-color: transparent;
@@ -108,11 +117,11 @@
                 }
             }
     
-            .form-input-phone::-webkit-inner-spin-button {
+            .register-form-input-phone::-webkit-inner-spin-button {
                 display: none;
             }
     
-            .form-button {
+            .register-form-button {
                 width: 40%;
                 background-color: var(--color-white);
                 border: 0;

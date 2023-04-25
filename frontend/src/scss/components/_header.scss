@@ -15,6 +15,15 @@ header {
     -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
 
+    .top-bar {
+        height: 0.5rem;
+        transition: all linear 0.2s;
+        background-color: var(--color-black);
+        position: absolute;
+        top: 0;
+        margin-top: -0.1rem;
+    }
+
     .header-logo {
         width: 9rem;
         margin: 1rem;
@@ -65,17 +74,6 @@ header {
                 color: var(--color-black);
                 font-weight: 900;
                 letter-spacing: 1rem;
-            }
-
-            .nav-bar-link-grey {
-                text-decoration: underline;
-                font-size: 3rem;
-                color: var(--color-black);
-                font-weight: 900;
-            }
-
-            .admin-link {
-                display: none;
             }
         }   
     }

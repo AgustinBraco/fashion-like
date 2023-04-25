@@ -1,11 +1,20 @@
 import { Link } from "react-router-dom";
 
 function Header() {
+
+  window.addEventListener("scroll", () => {
+    let fullHeight = document.body.scrollHeight - window.innerHeight;
+    let scroll = scrollY;
+    let progress = (scroll/fullHeight)*100;
+    document.querySelector(".top-bar").style.width=`${progress}vw`;
+  });
+
   const getJSON = (key) => {
-    return JSON.parse(localStorage.getItem(key))
+    return JSON.parse(localStorage.getItem(key));
   };
 
-  const loginValue = getJSON("login")
+  const loginValue = getJSON("login");
+  const adminValue = getJSON("admin");
 
   function displayNavbar() {
     const navbar = document.querySelector(".nav-bar-container");
@@ -45,9 +54,33 @@ function Header() {
     }, 500)
   }
 
-  if (loginValue) {
+  if (adminValue) {
     return (
       <header>
+        <div className="top-bar"></div>
+        <Link to={"/"}><img src="assets/icons/logo.png" alt="logo" className="header-logo"/></Link>
+  
+        <button className="header-menu-mobile-button" onClick={displayNavbar}>
+          <img src="assets/icons/menu-mobile.png" alt="icon-menu-mobile" className="header-menu-mobile"/>
+        </button>
+  
+        <nav className="nav-bar-container animate__animated animate__fadeIn animate__fadeOut">
+          <button className="header-menu-mobile-close-button" onClick={hideNavbar}>
+            <img src="assets/icons/menu-mobile-close.png" alt="icon-menu-mobile-close" className="header-menu-mobile-close"/>
+          </button>
+  
+          <ul className="nav-bar">
+            <li><Link className="nav-bar-link" to={"/posts"}>POSTS</Link></li>
+            <li><Link className="nav-bar-link" to={"/account"}>ACCOUNT</Link></li>
+            <li><Link className="nav-bar-link" to={"/management"}>MANAGEMENT</Link></li>
+          </ul>
+        </nav>
+      </header>
+    );
+  } else if (loginValue) {
+    return (
+      <header>
+        <div className="top-bar"></div>
         <Link to={"/"}><img src="assets/icons/logo.png" alt="logo" className="header-logo"/></Link>
   
         <button className="header-menu-mobile-button" onClick={displayNavbar}>
@@ -63,15 +96,14 @@ function Header() {
             <li><Link className="nav-bar-link" to={"/posts"}>POSTS</Link></li>
             <li><Link className="nav-bar-link" to={"/account"}>ACCOUNT</Link></li>
             <li><Link className="nav-bar-link" to={"/contact"}>CONTACT</Link></li>
-            <li className="admin-link"><Link className="nav-bar-link-grey" to={"/management"}>Management</Link></li>
           </ul>
         </nav>
-  
       </header>
     );
   } else {
     return (
       <header>
+        <div className="top-bar"></div>
         <Link to={"/"}><img src="assets/icons/logo.png" alt="logo" className="header-logo"/></Link>
   
         <button className="header-menu-mobile-button" onClick={displayNavbar}>
@@ -88,10 +120,8 @@ function Header() {
             <li><Link className="nav-bar-link" to={"/login"}>LOGIN</Link></li>
             <li><Link className="nav-bar-link" to={"/register"}>REGISTER</Link></li>
             <li><Link className="nav-bar-link" to={"/contact"}>CONTACT</Link></li>
-            <li className="admin-link"><Link className="nav-bar-link-grey" to={"/management"}>Management</Link></li>
           </ul>
         </nav>
-  
       </header>
     );
   }

@@ -9,16 +9,21 @@
   font-family: 'Playfair Display', serif, sans-serif, Helvetica, Arial;
 }
 
-/* Root */
-html {
-  font-size: 62.5%;
-  // overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
 /* Colors */
 :root {
   --color-black: #000000;
   --color-grey: #DFDBE0;
+  --color-wheat: #d5d0cd;
   --color-white: #FFFFFF;
+}
+
+/* Root */
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }

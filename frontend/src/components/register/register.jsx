@@ -3,6 +3,11 @@ import { Context } from "../../context/context";
 import { Link } from "react-router-dom";
 
 function Register() {
+  const getJSON = (key) => {
+    return JSON.parse(localStorage.getItem(key));
+  };
+  
+  const adminValue = getJSON("admin");
 
   const { useLocalStorage } = useContext(Context);
 
@@ -55,15 +60,15 @@ function Register() {
     setRepeatPassword(e.target.value);
   };
 
-  if (loginValue) {
+  if (loginValue || adminValue) {
     return (
-      <main className="register-main">
-        <div className="registered-container">
-            <img src="assets/icons/verified.gif" alt="icon-verified" className="registered-icon"/>
-            <p className="registered-text">Your are already registred</p>
-            <Link to={"/account"} className="registered-link">ACCOUNT</Link>
-        </div>
-      </main>
+    <main className="registered-main">
+      <div className="registered-container">
+          <img src="assets/icons/verified.gif" alt="icon-verified" className="registered-icon"/>
+          <p className="registered-text">Your are already registered</p>
+          <Link to={"/account"} className="registered-link">ACCOUNT</Link>
+      </div>
+    </main>
     )
   } else {
     return (
@@ -72,34 +77,34 @@ function Register() {
 
         <section className="register-container">
   
-            <h2 className="register-title">WELCOME</h2>
+          <h2 className="register-title">REGISTER</h2>
 
-            <form onSubmit={() => register(firstName, lastName, email, phone, password, repeatPassword)} className="form">
-              <label htmlFor="firstName" className="form-label">First name</label>
-              <input className="form-input" required id="firstName" name="firstName" type="text" value={firstName} onChange={handleFirstName} placeholder="John"/>
-              
-              <label htmlFor="lastName" className="form-label">Last name</label>
-              <input className="form-input" required id="lastName" name="lastName" type="text" value={lastName} onChange={handleLastName} placeholder="Doe"/>
-              
-              <label htmlFor="email" className="form-label">Email</label>
-              <input className="form-input" required id="email" name="email" type="email" value={email} onChange={handleEmail} placeholder="johndoe@gmail.com"/>
-              
-              <label htmlFor="phone" className="form-label">Phone</label>
-              <input className="form-input form-input-phone" required id="phone" name="phone" type="number" value={phone} onChange={handlePhone} placeholder="+5491122334455"/>
-              
-              <label htmlFor="password" className="form-label">Password</label>
-              <input className="form-input" required id="password" name="password" type="password" value={password} onChange={handlePassword}/>
-              
-              <label htmlFor="repeatPassword" className="form-label">Repeat password</label>
-              <input className="form-input" required id="repeatPassword" name="repeatPassword" type="password" value={repeatPassword} onChange={handleRepeatPassword}/>
-              
-              <button className="form-button" type="submit">Sign in</button>
-            </form>
+          <form onSubmit={() => register(firstName, lastName, email, phone, password, repeatPassword)} className="register-form">
+            <label htmlFor="firstName" className="register-form-label">First name</label>
+            <input className="register-form-input" required id="firstName" name="firstName" type="text" value={firstName} onChange={handleFirstName} placeholder="John"/>
+            
+            <label htmlFor="lastName" className="register-form-label">Last name</label>
+            <input className="register-form-input" required id="lastName" name="lastName" type="text" value={lastName} onChange={handleLastName} placeholder="Doe"/>
+            
+            <label htmlFor="email" className="register-form-label">Email</label>
+            <input className="register-form-input" required id="email" name="email" type="email" value={email} onChange={handleEmail} placeholder="johndoe@gmail.com"/>
+            
+            <label htmlFor="phone" className="register-form-label">Phone</label>
+            <input className="register-form-input form-input-phone" required id="phone" name="phone" type="number" value={phone} onChange={handlePhone} placeholder="+5491122334455"/>
+            
+            <label htmlFor="password" className="register-form-label">Password</label>
+            <input className="register-form-input" required id="password" name="password" type="password" value={password} onChange={handlePassword}/>
+            
+            <label htmlFor="repeatPassword" className="register-form-label">Repeat password</label>
+            <input className="register-form-input" required id="repeatPassword" name="repeatPassword" type="password" value={repeatPassword} onChange={handleRepeatPassword}/>
+            
+            <button className="register-form-button" type="submit">Sign up</button>
+          </form>
 
         </section>
       </main>
     );
   }
-  };
+};
   
-  export default Register;
+export default Register;
