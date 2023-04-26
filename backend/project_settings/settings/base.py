@@ -30,11 +30,13 @@ BASE_APPS = [
 ]
 
 LOCAL_APPS = [
-
+    'users',
 ]
 
 THIRD_APPS = [
     'rest_framework',
+    'simple_history',
+    'phonenumber_field',
 ]
 
 INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS
@@ -111,3 +113,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Custom User model
+AUTH_USER_MODEL = 'users.CustomUser'
