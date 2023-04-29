@@ -4,81 +4,45 @@ header {
     z-index: 99999;
     position: sticky;
     top: 0;
-    background-color: var(--color-white);
     width: 100vw;
     height: 10vh;
+    background-color: var(--color-white);
     display: flex;
-    flex-flow: row nowrap;
     justify-content: space-between;
+    padding-inline: 2rem;
+    padding-block: 1.5rem;
     align-items: center;
-    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.5);
 
-    .top-bar {
-        height: 0.5rem;
-        transition: all linear 0.2s;
-        background-color: var(--color-black);
-        position: absolute;
-        top: 0;
-        margin-top: -0.1rem;
-    }
-
-    .header-logo {
-        width: 9rem;
-        margin: 1rem;
-    }
-
-    .header-menu-mobile-button {
-        background-color: transparent;
-        border: none;
-   
-        .header-menu-mobile {
-            width: 3.5rem;
-            margin: 2rem;
-        }
-    }
-
-    .header-menu-mobile-close-button {
-        background-color: transparent;
-        border: none;
-        padding: 0.7rem;
-
-        .header-menu-mobile-close {
-            width: 2.5rem;
-            margin: 1.8rem;
-        }
-    }
-
-    .nav-bar-container {
-        display: none;
-
-        .nav-bar {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: start;
-            gap: 9rem;
-            text-align: center;
-            width: 100vw;
-            height: 100vh;
-            background-color: var(--color-grey);
-            position: absolute;
-            right: 0;
-            top: 6.5rem;
-            list-style: none;
-            padding-top: 5rem;
-    
-            .nav-bar-link {
-                text-decoration: none;
-                font-size: 3.5rem;
-                color: var(--color-black);
-                font-weight: 900;
-                letter-spacing: 1rem;
-            }
-        }   
-    }
-
-    .open-navbar {
+    .header-account {
+        background-color: var(--color-main);
+        width: 5rem;
+        height: 5rem;
+        border-radius: 5rem;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .header-account-link {
+
+            .header-account-icon {
+                transform: scale(1.3);
+            }
+        }
+    }
+
+    .header-feed {
+        background-color: var(--color-white);
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .header-feed-link {
+   
+            .header-feed-icon {
+                transform: scale(1.5);
+            }
+        }
     }
 }

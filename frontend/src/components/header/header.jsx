@@ -1,128 +1,37 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../../context/context";
 
 function Header() {
+  const { loginValue, adminValue } = useContext(Context);
 
-  window.addEventListener("scroll", () => {
-    let fullHeight = document.body.scrollHeight - window.innerHeight;
-    let scroll = scrollY;
-    let progress = (scroll/fullHeight)*100;
-    document.querySelector(".top-bar").style.width=`${progress}vw`;
-  });
-
-  const getJSON = (key) => {
-    return JSON.parse(localStorage.getItem(key));
-  };
-
-  const loginValue = getJSON("login");
-  const adminValue = getJSON("admin");
-
-  function displayNavbar() {
-    const navbar = document.querySelector(".nav-bar-container");
-
-    if (navbar.classList.contains("animate__fadeOut")) {
-      navbar.classList.remove("animate__fadeOut")
-      navbar.classList.add("animate__fadeIn")
-    }
-
-    setTimeout(() => {
-      navbar.classList.toggle("open-navbar");
-
-      const menu = document.querySelector(".header-menu-mobile-button");
-      menu.style.display = "none";
-  
-      const menuClose = document.querySelector(".header-menu-mobile-close-button");
-      menuClose.style.display = "flex";
-    }, 500)
-  }
-
-  function hideNavbar() {
-    const navbar = document.querySelector(".nav-bar-container");
-
-    if (navbar.classList.contains("animate__fadeIn")) {
-      navbar.classList.remove("animate__fadeIn")
-      navbar.classList.add("animate__fadeOut")
-    }
-
-    setTimeout(() => {
-      navbar.classList.toggle("open-navbar");
-
-      const menu = document.querySelector(".header-menu-mobile-button");
-      menu.style.display = "flex";
-  
-      const menuClose = document.querySelector(".header-menu-mobile-close-button");
-      menuClose.style.display = "none";
-    }, 500)
-  }
-
-  if (adminValue) {
+  if (adminValue || loginValue) {
     return (
       <header>
-        <div className="top-bar"></div>
-        <Link to={"/"}><img src="assets/icons/logo.png" alt="logo" className="header-logo"/></Link>
-  
-        <button className="header-menu-mobile-button" onClick={displayNavbar}>
-          <img src="assets/icons/menu-mobile.png" alt="icon-menu-mobile" className="header-menu-mobile"/>
-        </button>
-  
-        <nav className="nav-bar-container animate__animated animate__fadeIn animate__fadeOut">
-          <button className="header-menu-mobile-close-button" onClick={hideNavbar}>
-            <img src="assets/icons/menu-mobile-close.png" alt="icon-menu-mobile-close" className="header-menu-mobile-close"/>
-          </button>
-  
-          <ul className="nav-bar">
-            <li><Link className="nav-bar-link" to={"/posts"}>POSTS</Link></li>
-            <li><Link className="nav-bar-link" to={"/account"}>ACCOUNT</Link></li>
-            <li><Link className="nav-bar-link" to={"/management"}>MANAGEMENT</Link></li>
-          </ul>
-        </nav>
-      </header>
-    );
-  } else if (loginValue) {
-    return (
-      <header>
-        <div className="top-bar"></div>
-        <Link to={"/"}><img src="assets/icons/logo.png" alt="logo" className="header-logo"/></Link>
-  
-        <button className="header-menu-mobile-button" onClick={displayNavbar}>
-          <img src="assets/icons/menu-mobile.png" alt="icon-menu-mobile" className="header-menu-mobile"/>
-        </button>
-  
-        <nav className="nav-bar-container animate__animated animate__fadeIn animate__fadeOut">
-          <button className="header-menu-mobile-close-button" onClick={hideNavbar}>
-            <img src="assets/icons/menu-mobile-close.png" alt="icon-menu-mobile-close" className="header-menu-mobile-close"/>
-          </button>
-  
-          <ul className="nav-bar">
-            <li><Link className="nav-bar-link" to={"/posts"}>POSTS</Link></li>
-            <li><Link className="nav-bar-link" to={"/account"}>ACCOUNT</Link></li>
-            <li><Link className="nav-bar-link" to={"/contact"}>CONTACT</Link></li>
-          </ul>
-        </nav>
+          <div className="header-account">
+            <Link className="header-account-link" to={"/account"}>
+                <svg className="header-account-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157  16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="black" strokeWidth="1.99832" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="black" strokeWidth="1.99832" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+            </Link>
+          </div>
+
+          <div className="header-feed">
+            <Link className="header-feed-link" to={"/feed"}>
+              <svg className="header-feed-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 1H1V8H8V1Z" stroke="black" strokeWidth="1.99832" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M19 1H12V8H19V1Z" stroke="black" strokeWidth="1.99832" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M19 12H12V19H19V12Z" stroke="black" strokeWidth="1.99832" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M8 12H1V19H8V12Z" stroke="black" strokeWidth="1.99832" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
       </header>
     );
   } else {
     return (
-      <header>
-        <div className="top-bar"></div>
-        <Link to={"/"}><img src="assets/icons/logo.png" alt="logo" className="header-logo"/></Link>
-  
-        <button className="header-menu-mobile-button" onClick={displayNavbar}>
-          <img src="assets/icons/menu-mobile.png" alt="icon-menu-mobile" className="header-menu-mobile"/>
-        </button>
-  
-        <nav className="nav-bar-container animate__animated animate__fadeIn animate__fadeOut">
-          <button className="header-menu-mobile-close-button" onClick={hideNavbar}>
-            <img src="assets/icons/menu-mobile-close.png" alt="icon-menu-mobile-close" className="header-menu-mobile-close"/>
-          </button>
-  
-          <ul className="nav-bar">
-            <li><Link className="nav-bar-link" to={"/posts"}>POSTS</Link></li>
-            <li><Link className="nav-bar-link" to={"/login"}>LOGIN</Link></li>
-            <li><Link className="nav-bar-link" to={"/register"}>REGISTER</Link></li>
-            <li><Link className="nav-bar-link" to={"/contact"}>CONTACT</Link></li>
-          </ul>
-        </nav>
-      </header>
+      <div></div>
     );
   }
 };

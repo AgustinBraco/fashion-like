@@ -3,6 +3,13 @@ import { createContext, useState } from "react";
 export const Context = createContext();
 export function CustomProvider({ children }) {
 
+  const getJSON = (key) => {
+    return JSON.parse(localStorage.getItem(key))
+  };
+
+  const loginValue = getJSON("login");
+  const adminValue = getJSON("admin");
+
   function useLocalStorage(key, initialValue) {
     const [storedValue, setStoredValue] = useState(() => {
       try {
@@ -26,7 +33,7 @@ export function CustomProvider({ children }) {
   };
 
   return (
-    <Context.Provider value={{useLocalStorage}}>
+    <Context.Provider value={{useLocalStorage, loginValue, adminValue, getJSON}}>
       {children}
     </Context.Provider>
   );

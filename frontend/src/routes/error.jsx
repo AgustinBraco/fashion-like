@@ -1,5 +1,4 @@
 import Header from "../components/header/header.jsx";
-import Footer from "../components/footer/footer.jsx";
 import Error from "../components/error/error.jsx";
 
 function ErrorRoot() {
@@ -7,7 +6,6 @@ function ErrorRoot() {
         <div>
             <Header />
             <Error />
-            <Footer />
         </div>
     );
 };

@@ -1,5 +1,4 @@
 import Header from "../components/header/header.jsx";
-import Footer from "../components/footer/footer.jsx";
 import Account from "../components/account/account.jsx";
 
 function AccountRoot() {
@@ -7,7 +6,6 @@ function AccountRoot() {
         <div>
             <Header />
             <Account />
-            <Footer />
         </div>
     );
 };

@@ -1,5 +1,4 @@
 import Header from "../components/header/header.jsx";
-import Footer from "../components/footer/footer.jsx";
 import Register from "../components/register/register.jsx";
 
 function RegiterRoot() {
@@ -7,7 +6,6 @@ function RegiterRoot() {
         <div>
             <Header />
             <Register />
-            <Footer />
         </div>
     );
 };

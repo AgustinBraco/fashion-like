@@ -3,26 +3,19 @@ import { Context } from "../../context/context";
 import { Link } from "react-router-dom";
 
 function Login() {
-  const getJSON = (key) => {
-    return JSON.parse(localStorage.getItem(key));
-  };
-  
-  const adminValue = getJSON("admin");
-
-  const { useLocalStorage } = useContext(Context);
+  const { useLocalStorage, loginValue, adminValue } = useContext(Context);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const [emailStorage, setEmailStorage] = useLocalStorage("email", "");
   const [passwordStorage, setPasswordStorage] = useLocalStorage("password", "");
-
-  const [loginValue, setLoginValue] = useLocalStorage("login", false);
+  const [logedValue, setLogedValue] = useLocalStorage("login", "");
 
   function login(email, password) {
     setEmailStorage(email);
     setPasswordStorage(password);
-    setLoginValue(true);
+    setLogedValue(true);
     window.location.href = "/account"
   };
 

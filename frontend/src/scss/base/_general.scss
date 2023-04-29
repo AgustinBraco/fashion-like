@@ -1,29 +1,99 @@
-/* Font */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-/* Reset */
+// Reset
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Playfair Display', serif, sans-serif, Helvetica, Arial;
+  font-family: 'Lato', sans-serif, Helvetica, Arial;
 }
 
-/* Colors */
-:root {
-  --color-black: #000000;
-  --color-grey: #DFDBE0;
-  --color-wheat: #d5d0cd;
-  --color-white: #FFFFFF;
-}
-
-/* Root */
+// Root
 html {
   font-size: 62.5%;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
+:root {
+  --color-main: #DFDBE0;
+  --color-secondary: #D5D0CD;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+}
+
+// Sroll
 ::-webkit-scrollbar {
   width: 0px;
+}
+
+// Selection
+::selection {
+  background: var(--color-secondary);
+  color: black;
+}
+
+/* Spinner loader */
+.lds-ellipsis {
+  display: flex;
+  margin: auto;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+position: absolute;
+top: 10rem;
+width: 1.3rem;
+height: 1.3rem;
+border-radius: 50%;
+background: var(--color-main);
+animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+left: 8px;
+animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+left: 8px;
+animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+left: 32px;
+animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+left: 56px;
+animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+0% {
+  transform: scale(0);
+}
+100% {
+  transform: scale(1);
+}
+}
+@keyframes lds-ellipsis3 {
+0% {
+  transform: scale(1);
+}
+100% {
+  transform: scale(0);
+}
+}
+@keyframes lds-ellipsis2 {
+0% {
+  transform: translate(0, 0);
+}
+100% {
+  transform: translate(24px, 0);
+}
 }

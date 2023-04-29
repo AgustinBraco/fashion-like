@@ -1,13 +1,11 @@
 import Header from "../components/header/header.jsx";
-import Footer from "../components/footer/footer.jsx";
-import Posts from "../components/posts/posts.jsx";
+import Feed from "../components/feed/feed.jsx";
 
 function PostsRoot() {
     return (
         <div>
             <Header />
-            <Posts />
-            <Footer />
+            <Feed />
         </div>
     );
 };

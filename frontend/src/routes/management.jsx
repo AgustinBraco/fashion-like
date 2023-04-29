@@ -1,5 +1,4 @@
 import Header from "../components/header/header.jsx";
-import Footer from "../components/footer/footer.jsx";
 import Management from "../components/management/management.jsx";
 
 function ManagementRoot() {
@@ -7,7 +6,6 @@ function ManagementRoot() {
         <div>
             <Header />
             <Management />
-            <Footer />
         </div>
     );
 };

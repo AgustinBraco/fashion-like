@@ -7,14 +7,16 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Roots
-import ErrorRoot from './routes/error.jsx';
 import Root from './routes/root.jsx';
-import Posts from './routes/posts.jsx';
-import Login from './routes/login.jsx';
-import Register from './routes/register.jsx';
-import Account from './routes/account.jsx';
-import Contact from './routes/contact.jsx';
-import Management from './routes/management.jsx';
+import FeedRoute from './routes/feed.jsx';
+
+import ErrorRoot from './routes/error.jsx';
+// import PostsRoout from './routes/posts.jsx';
+// import LoginRoout from './routes/login.jsx';
+// import RegisterRoout from './routes/register.jsx';
+// import AccountRoout from './routes/account.jsx';
+// import ContactRoout from './routes/contact.jsx';
+// import ManagementRoot from './routes/management.jsx';
 
 
 const router = createBrowserRouter([
@@ -26,29 +28,33 @@ const router = createBrowserRouter([
     element: <Root />,
   },
   {
-    path: "/posts",
-    element: <Posts />,
+    path: "/feed",
+    element: <FeedRoute />,
   },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/register",
-    element: <Register />,
-  },
-  {
-    path: "/account",
-    element: <Account />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
-  {
-    path: "/management",
-    element: <Management />,
-  },
+  // {
+  //   path: "/posts",
+  //   element: <PostsRoout />,
+  // },
+  // {
+  //   path: "/login:id",
+  //   element: <LoginRoout />,
+  // },
+  // {
+  //   path: "/register",
+  //   element: <RegisterRoout />,
+  // },
+  // {
+  //   path: "/account",
+  //   element: <AccountRoout />,
+  // },
+  // {
+  //   path: "/contact",
+  //   element: <ContactRoout />,
+  // },
+  // {
+  //   path: "/management",
+  //   element: <ManagementRoot />,
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

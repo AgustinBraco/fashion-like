@@ -3,13 +3,7 @@ import { Context } from "../../context/context";
 import { Link } from "react-router-dom";
 
 function Register() {
-  const getJSON = (key) => {
-    return JSON.parse(localStorage.getItem(key));
-  };
-  
-  const adminValue = getJSON("admin");
-
-  const { useLocalStorage } = useContext(Context);
+  const { useLocalStorage, loginValue, adminValue } = useContext(Context);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -23,8 +17,7 @@ function Register() {
   const [emailStorage, setEmailStorage] = useLocalStorage("email", "");
   const [phoneStorage, setPhoneStorage] = useLocalStorage("phone", "");
   const [passwordStorage, setPasswordStorage] = useLocalStorage("password", "");
-
-  const [loginValue, setLoginValue] = useLocalStorage("login", false);
+  const [logedValue, setLogedValue] = useLocalStorage("login", "");
 
   function register(firstName, lastName, email, phone, password) {
     setFirstNameStorage(firstName);
@@ -32,7 +25,7 @@ function Register() {
     setEmailStorage(email);
     setPhoneStorage(phone);
     setPasswordStorage(password);
-    setLoginValue(true);
+    setLogedValue(true);
     window.location.href = "/account"
   };
 

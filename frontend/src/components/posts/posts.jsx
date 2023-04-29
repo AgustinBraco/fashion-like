@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../../context/context";
 
 function Posts() {
-  const getJSON = (key) => {
-    return JSON.parse(localStorage.getItem(key))
-  };
+  const { loginValue, adminValue } = useContext(Context);
 
-  const loginValue = getJSON("login");
-  const adminValue = getJSON("admin");
+  // return <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>;
 
   if (loginValue || adminValue) {
     return (
