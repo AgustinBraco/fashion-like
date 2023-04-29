@@ -1,42 +1,43 @@
-# Proyecto de ID for Ideas
-## En colaboración con Carlos (Backend) y María (QA)
-
+# Proyecto: Fashion Like (ID for Ideas)
+#### Sitio web sobre indumentaria de moda.
 <br>
 
-### PROYECTO: FASHION LIKE
-#### Red social para indumentaria de moda.
-
+## Frontend: Agustín Braco
+## Backend: Carlos Aguirre
+## Designer: Joaquín Arregui Caviglia
 <br>
 
 ### Descripción del proyecto:
-#### Es una nueva red social donde se van publicando diferentes estilos de indumentaria y los usuarios pueden votar si les gusta o no el diseño.
-
+#### Sitio web sobre moda donde se realizar publicaciones sobre indumentaria.
+#### Existen tres roles de usuarios; no logeados (no pueden ver ni votar las publicaciones), logeados (pueden ver y votar publicaciones) y admins (pueden ver, votar, agregar, modificar y eliminar publicaciones, así como también borrar usuarios registrados).
 <br>
 
 ### Objetivo:
-#### Conocerl el comportamiento de elección de los usuarios para la creación de futuros diseños de indumentaria de la compañía.
-####  La información es valiosa por lo que debe ser fácil de conseguir y segura en su persistencia en la plataforma.
-
+#### Conocerl el comportamiento de elección de los usuarios para la creación de futuros diseños de indumentaria de la compañía, recopilando información valiosa sobre usuarios y publicaciones más y menos votadas.
 <br>
 
 ### Requisitos:
-#### -Los usuarios deben poder loguearse con email y contraseña.
-#### -El usuario debe poder ver todos los posteos en orden cronológico empezando desde el más reciente.
-#### -En cada posteo se puede elegir “like” o “dislike”.
-#### -Cada usuario puede elegir una sola opción por posteo. Puede cambiar de opinión luego de haber elegido una opción.
-#### -Debe haber un usuario administrador para ingresar a un panel de control.
-#### -En el panel de control debo poder crear, editar y eliminar posteos.
-#### -Debo poder ver el detalle de cada posteo con sus estadísticas.
-
+#### -Los usuarios deben poder registrarse ingresando ciertos datos.
+#### -Los usuarios registrados deben poder loguearse con email y contraseña correspondientes.
+#### -El usuario debe poder ver todos los posteos en orden cronológico.
+#### -En cada posteo el usuario puede votar por “Like” o “Dislike”.
+#### -Cada usuario puede elegir una sola opción por posteo, la cual podrá cambiarla luego desde la gestión de su cuenta.
+#### -Debe existir usuarios administradores para agregar, eliminar y modificar posteos, así como también la posibilidad de eliminar usuarios.
+#### -Se debe recopilar la información de los votos de cada usuario.
 <br>
 
 ### Páginas a desarrollar:
-#### -Login
+#### -Home
 #### -Registro
-#### -Feed de posteos
-#### -Panel de gestión de posteos (sólo con acceso de administrador)
-
+#### -Login
+#### -Filtros
+#### -Feed
+#### -Cuenta
+#### -Gestión
+#### -Contacto
+#### -Error
 <br>
 
 ## FRONTEND
-### Desarrollado con HTML, SASS (preprocesador de CSS) y REACT JAVASCRIPT.
+### Desarrollado con REACT JAVASCRIPT.
+#### Dependencias: Node, NPM, Vite, SASS y Router DOM.
