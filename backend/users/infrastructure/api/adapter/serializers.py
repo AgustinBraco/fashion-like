@@ -61,7 +61,6 @@ class CreateUserSerializer(serializers.ModelSerializer):
         if self.context['method'] != 'PATCH':
             password1 = data['password']
             password2 = data['password_confirm']
-            
             if password1 != password2:
                 raise serializers.ValidationError({
                     'password':_('The two password fields didn’t match.'),
@@ -81,5 +80,40 @@ class CreateUserSerializer(serializers.ModelSerializer):
             password = validated_data['password'],
         )
         return create_user
+
+
+class UserViewsetSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        
+        model = get_user_model()
+        fields = ['name', 'surname', 'email', 'phone_number']
+    
+    # Validaciones
+    def validate_email(self, value):
+        email = value
+        regex = re.compile(r"([A-Za-z0-9]+[-_.])*[A-Za-z0-9]+@[A-Za-z]+(\.[A-Z|a-z]{2,4}){1,2}")
+        if not re.fullmatch(regex, email):
+            raise serializers.ValidationError({
+                'email':_('Invalid email'),
+            })   
+        return value
+    
+    # Métodos
+    def update(self, instance, validated_data):
+        user = UserRepository()
+        return user.update(instance=instance, data=validated_data)
+
+
+class UserInfoSerializer(serializers.Serializer):
+
+    name = serializers.CharField(read_only=True)
+    surname = serializers.CharField(read_only=True)
+    email = serializers.EmailField(read_only=True)
+    phone_number = serializers.CharField(read_only=True)
+    
+    class Meta:
+        fields = ['name', 'surname', 'email', 'phone_number']
+        read_only_fields = fields
 
 

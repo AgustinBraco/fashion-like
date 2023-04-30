@@ -13,6 +13,7 @@ urlpatterns = [
     path('create/user/', CreateUserAPIView.as_view(), name='create_user'),
     path('login/', LoginAPIView.as_view(), name='login'),
     path('logout/<int:pk>/', LogoutAPIView.as_view(), name='logout'),
+    path('', include('users.infrastructure.api.adapter.routers')),
     
     # SimpleJWT
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

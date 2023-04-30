@@ -14,11 +14,9 @@ class UserLogin:
         email = request.data.get('email')
         password = request.data.get('password')
         user = authenticate(request, email=email, password=password)
-        
         if user:
             status['complete'] = True
             return status
-        
         status['complete'] = False
         status['error'] = 'Invalid email or password.'
         return status

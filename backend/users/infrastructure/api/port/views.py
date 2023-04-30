@@ -25,10 +25,8 @@ class LoginAPIView(TokenObtainPairView):
     def post(self, request, *args, **kwargs):
         user = UserLogin()
         status_auth = user.login(request)
-        
         if status_auth['complete']:
             serializer = self.serializer_class(data=request.data)
-
             if serializer.is_valid():
                 message = {
                     'access_token':serializer.validated_data['access'],
@@ -36,8 +34,7 @@ class LoginAPIView(TokenObtainPairView):
                     'message':_('Login successful.'),
                     'next_url':'Por definir',
                 }
-                return Response(message, status=status.HTTP_200_OK)
-            
+                return Response(message, status=status.HTTP_200_OK) 
         message = {
             'error':_(status_auth['error']),
         }
@@ -51,14 +48,12 @@ class LogoutAPIView(generics.GenericAPIView):
     def post(self, request, *args, **kwargs):
         user = UserLogout()
         status_logout = user.logout(request)
-        
         if status_logout['complete']:
             message = {
                 'message':_('Session closed successfully.'),
                 'next_url':'Por definir.',
             }
             return Response(message, status=status.HTTP_200_OK)
-        
         message = {
             'error':status_logout['error_list'],
         }
@@ -71,7 +66,6 @@ class CreateUserAPIView(generics.GenericAPIView):
     
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data, context={'method':request.method})
-        
         if serializer.is_valid():
             serializer.save()
             message = {
@@ -79,9 +73,73 @@ class CreateUserAPIView(generics.GenericAPIView):
                 'next_url':'login_user',
             }
             return Response(message, status=status.HTTP_201_CREATED)
-
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+class UserViewSet(mixins.UpdateModelMixin,
+                mixins.RetrieveModelMixin,
+                mixins.DestroyModelMixin,
+                viewsets.GenericViewSet):
+    
+    serializer_class = UserViewsetSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+    user = UserRepository()
 
+    def retrieve(self, request, *args, **kwargs):
+        pk = kwargs.get('pk')
+        instance = self.user.get_by_id(pk)
+        if instance:
+            serializer = UserInfoSerializer(instance)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        message = {
+            'message':_(f'The user with the id:{pk} does not exist.'),
+        }
+        return Response(message, status=status.HTTP_404_NOT_FOUND)
+
+    def update(self, request, *args, **kwargs):
+        pk = kwargs.get('pk')
+        instance = self.user.get_by_id(pk)
+        if instance:
+            serializer = self.serializer_class(instance, data=request.data, context={'method':request.method})
+            if serializer.is_valid():
+                serializer.save()
+                message = {
+                    'message':_('User updated successfully.'),
+                }
+                return Response(message, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        message = {
+            'message':_(f'The user with the id:{pk} does not exist.'),
+        }
+        return Response(message, status=status.HTTP_404_NOT_FOUND)
+
+    def partial_update(self, request, *args, **kwargs):
+        pk = kwargs.get('pk')
+        instance = self.user.get_by_id(pk)
+        if instance:
+            serializer = self.serializer_class(instance, data=request.data, partial=True, context={'method':request.method})
+            if serializer.is_valid(raise_exception=True):
+                serializer.save()
+                message = {
+                    'message':_('User updated successfully.'),
+                }
+                return Response(message, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        message = {
+            'message':_(f'The user with the id:{pk} does not exist.'),
+        }
+        return Response(message, status=status.HTTP_404_NOT_FOUND)
+
+    def destroy(self, request, *args, **kwargs):
+        pk = kwargs.get('pk')
+        user_delete = self.user.delete(pk)
+        if user_delete:
+            message = {
+                'message':_('User deleted successfully.'),
+            }
+            return Response(message, status=status.HTTP_204_NO_CONTENT)
+        message = {
+            'message':_(f'The user with the id:{pk} does not exist.'),
+        }
+        return Response(message, status=status.HTTP_404_NOT_FOUND)
 

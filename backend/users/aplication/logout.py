@@ -30,7 +30,6 @@ class UserLogout:
             status['complete'] = False
             status['error_list']['refresh_token_error'] = _(f'{str(e)}.')
             return status
-        
         status['complete'] = True
         authorization_header = request.headers.get('Authorization')
         token = authorization_header.split(' ')[1]
@@ -40,12 +39,10 @@ class UserLogout:
             algorithms=[SIMPLE_JWT['ALGORITHM']],
         )
         user_instance = self.user.get_by_only_id(id=decoded_token['user_id'])
-        
         if not user_instance:
             status['complete'] = False
             status['error_list']['user_error'] = _('The access token user does not exist. Invalid access token.')
             return status
-        
         refresh_token.blacklist()
         tkn = TokenRepository()
         instance_token = tkn.create(

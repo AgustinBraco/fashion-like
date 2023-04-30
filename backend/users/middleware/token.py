@@ -22,11 +22,9 @@ class AccessTokenMiddleware(MiddlewareMixin):
     
     def process_request(self, request, *args, **kwargs):
         authorization_header = request.headers.get('Authorization')
-        
         if authorization_header != None:
             token = authorization_header.split(' ')[1]
             instance = self.tkn.token_exists(token)
-
             if instance:    
                 message = {
                     'error':_('Access token is blacklisted.')
@@ -38,17 +36,26 @@ class AccessTokenMiddleware(MiddlewareMixin):
                 response.renderer_context = {'indent': 4}
                 response.render()
                 return response
-        
             path = re.search(r".*/(\d+)/?$", request.path_info)
-            
             if path:
                 pk = path.group(1)
-                decoded_token = jwt.decode(
-                    token,
-                    SIMPLE_JWT['SIGNING_KEY'],
-                    algorithms=[SIMPLE_JWT['ALGORITHM']],
-                )
-
+                try:
+                    decoded_token = jwt.decode(
+                        token,
+                        SIMPLE_JWT['SIGNING_KEY'],
+                        algorithms=[SIMPLE_JWT['ALGORITHM']],
+                    )
+                except jwt.exceptions.ExpiredSignatureError:
+                    message = {
+                        'error':_('Access token has expired.')
+                    }
+                    # Se crea la respuesta a la petición usando el formato JSON.
+                    response = Response(message, status=status.HTTP_401_UNAUTHORIZED)
+                    response.accepted_renderer = JSONRenderer()
+                    response.accepted_media_type = 'application/json'
+                    response.renderer_context = {'indent': 4}
+                    response.render()
+                    return response
                 if not str(decoded_token['user_id']) == pk:
                     message = {
                         'error':_('The "user_id" sent in the URL does not match the "user_id" in the access token.')
@@ -61,8 +68,6 @@ class AccessTokenMiddleware(MiddlewareMixin):
                     response.render()
                     return response
 
-        
 
-    
 
 
