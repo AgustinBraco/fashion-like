@@ -143,3 +143,30 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return f'{self.name} {self.surname}' or self.email.split('@')[0]
 
 
+class BlacklistedToken(models.Model):
+    
+    user_id = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.CASCADE,
+        null=False,
+        blank=False,
+        related_name='users_id',
+    )
+    token = models.TextField(
+        null=False,
+        blank=False,
+    )
+    jti = models.CharField(
+        unique=True,
+        max_length=255,
+        null=False,
+        blank=False,
+    )
+    expires_at = models.DateTimeField(
+        null=False,
+        blank=False,
+    )
+    blacklisted_at = models.DateTimeField(auto_now_add=True)
+
+
+
