@@ -1,6 +1,7 @@
 import Posts from "../../mocks/mocks.json"
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../../context/context";
+import Home from "../home/home";
 
 // Router
 import { useParams } from "react-router-dom";
@@ -74,21 +75,18 @@ function Post() {
 
   setTimeout(() => {
     const loader = document.querySelector(".loader");
-    
-    function hider() {
-      loader.style.display = "none";
-    }
-    setInterval(hider, 1000);
 
-    loader.classList.add("animate__fadeOut");
+    if (loader) {
+      function hider() {
+        loader.style.display = "none";
+      }
+      setInterval(hider, 1000);
+      loader.classList.add("animate__fadeOut");
+    }
   }, 1500);
 
   if (!loginValue && !adminValue) {
-    return (
-      <div>
-        <p>NO ACCOUNT</p>
-      </div>
-    )
+    return <Home />
   } else if (isVoted) {
     return (
     <div>

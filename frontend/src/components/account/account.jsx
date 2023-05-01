@@ -1,15 +1,12 @@
 import { useContext } from "react";
 import { Context } from "../../context/context";
+import Home from "../home/home";
 
 function Account() {
   const { loginValue, adminValue } = useContext(Context);
 
   if (!loginValue && !adminValue) {
-    return (
-      <div>
-        <p>NO ACCOUNT</p>
-      </div>
-    )
+    return <Home />
   } else {
     return (
       <div>

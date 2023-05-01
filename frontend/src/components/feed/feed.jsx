@@ -1,36 +1,35 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "../../context/context";
+import Home from "../home/home";
 import Posts from "../../mocks/mocks.json"
 
 function Feed() {
   const { useLocalStorage, loginValue, adminValue } = useContext(Context);
   const [filters, setFilters] = useLocalStorage("filters", []);
 
-  const filteredPost = filters.filter(
+  const filteredPosts = filters.filter(
     (obj, index, self) => index === self.findIndex((t) => t.id === obj.id)
   );
+  
+  const sortPosts = Posts.sort((a, b) => b.id - a.id);
 
   setTimeout(() => {
     const loader = document.querySelector(".loader");
     const feedContainer = document.querySelector(".feed-container");
 
-    feedContainer.style.overflow = "scroll";
-
-    function hider() {
-      loader.style.display = "none";
+    if (loader && feedContainer) {
+      feedContainer.style.overflow = "scroll";
+      function hider() {
+        loader.style.display = "none";
+      }
+      setInterval(hider, 1000);
+      loader.classList.add("animate__fadeOut");
     }
-    setInterval(hider, 1000);
-
-    loader.classList.add("animate__fadeOut");
   }, 1500);
 
   if (!loginValue && !adminValue) {
-    return (
-      <div>
-        <p>NO ACCOUNT</p>
-      </div>
-    );
+    return <Home />
   } else if (filters.length === 0) {
     return (
     <div>
@@ -44,7 +43,7 @@ function Feed() {
       </div>
 
       <div className="feed-container">
-        {Posts.map((item) => {
+        {sortPosts.map((item) => {
             return (
               <div key={item.id} className="feed-image-container">
               <Link to={`/post/${item.id}`}>
@@ -69,7 +68,7 @@ function Feed() {
       </div>
 
       <div className="feed-container">
-        {filteredPost.map((item) => {
+        {filteredPosts.map((item) => {
           return (
               <div key={item.id} className="feed-image-container">
               <Link to={`/post/${item.id}`}>

@@ -141,6 +141,20 @@ function Home( ) {
     testValue.classList.toggle("active");
   }
 
+  function testLink(e) {
+    if (filterStorage.length === 0) {
+      e.preventDefault();
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        iconColor: 'var(--color-black)',
+        title: 'Select at least one filter',
+        showConfirmButton: false,
+        timer: 2000
+      });
+    }
+  }
+
   if (!loginValue) {
     return (
       <div className="home-container">
@@ -227,7 +241,7 @@ function Home( ) {
   
           <div className="home-links-container">
             <Link className="home-link" to={"/feed"}>All</Link>
-            <Link className="home-link" to={"/feed"}>Next</Link>
+            <Link className="home-link" to={"/feed"} onClick={testLink}>Next</Link>
           </div>
   
         </div>

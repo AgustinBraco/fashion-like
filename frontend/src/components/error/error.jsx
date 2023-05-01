@@ -5,10 +5,10 @@ function Error() {
     const error = useRouteError();
     return (
         <div className="error-container">
-            <img src="assets/icons/error.gif" alt="icon-error" className="error-icon"/>
+            <img src="/assets/icons/error.gif" alt="icon-error" className="error-icon"/>
             <p className="error-text">{error.statusText || error.message}</p>
             <p className="error-message">URL error: Incorrect or nonexistent.</p>
-            <Link to={"/"} className="error-home-link">HOME</Link>
+            <Link to={"/feed"} className="error-home-link">HOME</Link>
         </div>
     );
 };

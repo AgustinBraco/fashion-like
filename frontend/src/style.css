@@ -121,12 +121,12 @@ html {
   font-size: 4rem;
 }
 .error-container .error-home-link {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   width: 10rem;
   text-align: center;
   border-radius: 1rem;
   background-color: var(--color-black);
-  color: var(--color-grey);
+  color: var(--color-main);
   font-weight: 500;
   text-decoration: none;
 }
@@ -327,6 +327,9 @@ header .header-filters .header-filters-link .header-filters-icon {
   width: 100vw;
   padding: 3rem;
   border-radius: 3rem 3rem 0 0;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
 }
 .home-container .home-bottom-container .login-container {
   display: flex;
