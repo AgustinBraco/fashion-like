@@ -1,0 +1,22 @@
+@import '../base/mixin';
+
+.feed-container {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-flow: row wrap;
+    overflow: hidden;
+
+    .feed-image-container {
+        width: 50%;
+        height: 30%;
+        text-align: center;
+
+        .feed-images {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            border-radius: 2rem;
+        }
+    }
+}

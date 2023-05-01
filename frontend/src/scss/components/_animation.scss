@@ -1,0 +1,19 @@
+@import '../base/mixin';
+
+.animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white);
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+
+    .animation-logo {
+        width: 15rem;
+        border: dashed 2px var(--color-black);
+        border-radius: 2rem;
+    }
+}

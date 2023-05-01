@@ -4,7 +4,7 @@ import Feed from "../components/feed/feed.jsx";
 function FeedRoute() {
   return (
   <div>
-    <Header />
+    <Header isFeed={true}/>
     <Feed />
   </div>
   );

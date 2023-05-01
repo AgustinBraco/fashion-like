@@ -1,7 +1,7 @@
 @import '../base/mixin';
 
 header {
-    z-index: 99999;
+    z-index: 999;
     position: sticky;
     top: 0;
     width: 100vw;
@@ -41,6 +41,22 @@ header {
         .header-feed-link {
    
             .header-feed-icon {
+                transform: scale(1.5);
+            }
+        }
+    }
+
+    .header-filters {
+        background-color: var(--color-white);
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .header-filters-link {
+   
+            .header-filters-icon {
                 transform: scale(1.5);
             }
         }

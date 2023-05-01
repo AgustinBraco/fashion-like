@@ -1,0 +1,322 @@
+[
+    {
+        "id": 1,
+        "image": "/assets/images/casual-1.jpg",
+        "category": "casual",
+        "color": "light",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 2,
+        "image": "/assets/images/formal-1.jpg",
+        "category": "formal",
+        "color": "color",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 3,
+        "image": "/assets/images/high-1.jpg",
+        "category": "high",
+        "color": "dark",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 4,
+        "image": "/assets/images/sport-1.jpg",
+        "category": "sport",
+        "color": "dark",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 5,
+        "image": "/assets/images/trend-1.jpg",
+        "category": "trend",
+        "color": "color",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 6,
+        "image": "/assets/images/casual-2.jpg",
+        "category": "casual",
+        "color": "light",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 7,
+        "image": "/assets/images/formal-2.jpg",
+        "category": "formal",
+        "color": "dark",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 8,
+        "image": "/assets/images/high-2.jpg",
+        "category": "high",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 9,
+        "image": "/assets/images/sport-2.jpg",
+        "category": "sport",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 10,
+        "image": "/assets/images/trend-2.jpg",
+        "category": "trend",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 11,
+        "image": "/assets/images/casual-3.jpg",
+        "category": "casual",
+        "color": "dark",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 12,
+        "image": "/assets/images/formal-3.jpg",
+        "category": "formal",
+        "color": "dark",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 13,
+        "image": "/assets/images/high-3.jpg",
+        "category": "high",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 14,
+        "image": "/assets/images/sport-3.jpg",
+        "category": "sport",
+        "color": "light",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 15,
+        "image": "/assets/images/trend-3.jpg",
+        "category": "trend",
+        "color": "color",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 16,
+        "image": "/assets/images/casual-4.jpg",
+        "category": "casual",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 17,
+        "image": "/assets/images/formal-4.jpg",
+        "category": "formal",
+        "color": "dark",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 18,
+        "image": "/assets/images/high-4.jpg",
+        "category": "high",
+        "color": "color",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 19,
+        "image": "/assets/images/sport-4.jpg",
+        "category": "sport",
+        "color": "light",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 20,
+        "image": "/assets/images/trend-4.jpg",
+        "category": "trend",
+        "color": "light",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 21,
+        "image": "/assets/images/casual-5.jpg",
+        "category": "casual",
+        "color": "dark",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 22,
+        "image": "/assets/images/formal-5.jpg",
+        "category": "formal",
+        "color": "dark",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 23,
+        "image": "/assets/images/high-5.jpg",
+        "category": "high",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 24,
+        "image": "/assets/images/sport-5.jpg",
+        "category": "sport",
+        "color": "light",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 25,
+        "image": "/assets/images/trend-5.jpg",
+        "category": "trend",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 26,
+        "image": "/assets/images/casual-6.jpg",
+        "category": "casual",
+        "color": "light",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 27,
+        "image": "/assets/images/formal-6.jpg",
+        "category": "formal",
+        "color": "light",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 28,
+        "image": "/assets/images/high-6.jpg",
+        "category": "high",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 29,
+        "image": "/assets/images/sport-6.jpg",
+        "category": "sport",
+        "color": "light",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 30,
+        "image": "/assets/images/trend-6.jpg",
+        "category": "trend",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 31,
+        "image": "/assets/images/casual-7.jpg",
+        "category": "casual",
+        "color": "dark",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 32,
+        "image": "/assets/images/formal-7.jpg",
+        "category": "formal",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 33,
+        "image": "/assets/images/high-7.jpg",
+        "category": "high",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 34,
+        "image": "/assets/images/sport-7.jpg",
+        "category": "sport",
+        "color": "dark",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 35,
+        "image": "/assets/images/trend-7.jpg",
+        "category": "trend",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 36,
+        "image": "/assets/images/casual-8.jpg",
+        "category": "casual",
+        "color": "dark",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 37,
+        "image": "/assets/images/formal-8.jpg",
+        "category": "formal",
+        "color": "dark",
+        "gender": "men",
+        "votes": 0
+    },
+    {
+        "id": 38,
+        "image": "/assets/images/high-8.jpg",
+        "category": "high",
+        "color": "light",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 39,
+        "image": "/assets/images/sport-8.jpg",
+        "category": "sport",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    },
+    {
+        "id": 40,
+        "image": "/assets/images/trend-8.jpg",
+        "category": "trend",
+        "color": "color",
+        "gender": "women",
+        "votes": 0
+    }
+]

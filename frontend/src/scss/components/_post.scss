@@ -1,0 +1,53 @@
+@import '../base/mixin';
+
+.post-container {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    text-align: center;
+
+    .post-image-container {
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .post-image {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 1.5rem;
+        }
+    }
+
+    .post-buttons-container {
+        height: 20%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+
+        .post-like-button, .post-dislike-button {
+            border: none;
+            outline: none;
+            background: transparent;
+
+            .post-icon {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .post-voted-text {
+        font-size: 1.5rem;
+        margin-inline: 4rem;
+    }
+
+    .post-voted-likes {
+        font-size: 2rem;
+    }
+}

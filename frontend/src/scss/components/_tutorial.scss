@@ -1,0 +1,26 @@
+@import '../base/mixin';
+
+.tutorial-container {
+    background-color: var(--color-white);
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+
+    .tutorial-buttons-container {
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2rem;
+
+        .tutorial-button {
+            background: transparent;
+            border: 0;
+            outline: none;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-inline: 2rem;
+        }
+    }
+}
