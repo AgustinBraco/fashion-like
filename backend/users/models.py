@@ -9,14 +9,6 @@ from django.conf import settings
 
 # Project
 from phonenumber_field.modelfields import PhoneNumberField
-from simple_history.models import HistoricalRecords
-
-
-"""
-Django-simple-history es una extensión de Django que permite el seguimiento de los cambios en los modelos de la base de datos.
-
-https://django-simple-history.readthedocs.io/en/latest/configuration.html
-"""
 
 
 class CustomUserManager(UserManager):
@@ -29,11 +21,9 @@ class CustomUserManager(UserManager):
         """
         
         fields = {'name':name, 'surname':surname, 'email':email, 'phone number':phone_number}
-        
         for key, value in fields.items():
             if not value:
                 raise ValueError(f"The given {key} must be set")
-            
         user = self.model(
             name=name,
             surname=surname,
@@ -53,7 +43,6 @@ class CustomUserManager(UserManager):
     def create_superuser(self, name=None, surname=None, email=None, phone_number=None, password=None, **extra_fields):
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
-
         if extra_fields.get("is_staff") is not True:
             raise ValueError("Superuser must have is_staff=True.")
         if extra_fields.get("is_superuser") is not True:
@@ -116,13 +105,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     )
     date_joined = models.DateTimeField(_("date joined"), default=timezone.now)
     last_login = models.DateTimeField(_("last login"), blank=True, null=True)
-    history = HistoricalRecords()
     
     objects = CustomUserManager()
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name', 'surname', 'phone_number']
-    
     
     class Meta:
         verbose_name = _("user")
@@ -132,7 +119,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         """
         Devuelve el nombre y el apellido, con un espacio en medio.
         """
-        
+    
         return f'{self.name.capitalize()} {self.surname.capitalize()}'
 
     def get_short_name(self):
@@ -167,6 +154,7 @@ class BlacklistedToken(models.Model):
         blank=False,
     )
     blacklisted_at = models.DateTimeField(auto_now_add=True)
+
 
 
 

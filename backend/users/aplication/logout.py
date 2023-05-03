@@ -23,9 +23,12 @@ class UserLogout:
             status (type:dict): Diccionario que contiene información sobre el estado de la petición y sus errores.
         """
         
+        if request.data.get("refresh_token") is None:
+            status['complete'] = False
+            status['error_list']['refresh_token_error'] = _('The "refresh_token" was not sent in the request.')
+            return status
         try:
             refresh_token = RefreshToken(request.data.get("refresh_token"))
-            
         except Exception as e:
             status['complete'] = False
             status['error_list']['refresh_token_error'] = _(f'{str(e)}.')

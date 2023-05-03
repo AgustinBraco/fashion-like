@@ -1,5 +1,6 @@
 # Django
 from django.contrib.auth import authenticate
+from django.utils.translation import gettext_lazy as _
 
 class UserLogin:
     
@@ -18,7 +19,7 @@ class UserLogin:
             status['complete'] = True
             return status
         status['complete'] = False
-        status['error'] = 'Invalid email or password.'
+        status['error'] = _('Invalid email or password.')
         return status
     
     def login(self, request)->dict:
@@ -27,5 +28,4 @@ class UserLogin:
             'error':None,
         }
         return self.authenticate_user(request, status)
-
 

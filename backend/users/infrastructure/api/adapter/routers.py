@@ -7,3 +7,5 @@ from users.infrastructure.api.port.views import UserViewSet
 router = DefaultRouter()
 router.register(r'user', UserViewSet, basename='user')
 urlpatterns = router.urls
+
+

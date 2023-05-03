@@ -68,7 +68,6 @@ class CreateUserSerializer(serializers.ModelSerializer):
             return data
         return data
     
-    
     # Métodos
     def create(self, validated_data):
         user = UserRepository()
@@ -115,5 +114,6 @@ class UserInfoSerializer(serializers.Serializer):
     class Meta:
         fields = ['name', 'surname', 'email', 'phone_number']
         read_only_fields = fields
+
 
 

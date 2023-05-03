@@ -22,6 +22,3 @@ class TokenRepository:
     
     def token_exists(self, token):
         return self.model.objects.filter(token=token).exists()
-
-
-
