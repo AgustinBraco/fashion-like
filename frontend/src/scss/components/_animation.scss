@@ -4,16 +4,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-white);
+    text-align: center;
+    background-color: var(--color-second);
     position: absolute;
     z-index: 99999;
     top: 0;
     width: 100vw;
     height: 100vh;
 
-    .animation-logo {
-        width: 15rem;
-        border: dashed 2px var(--color-black);
-        border-radius: 2rem;
+    .animation-title {
+        font-size: 5rem;
+        font-weight: 800;
+        text-shadow: 8px 4px 4px rgba(0,0,0,0.2);
+        letter-spacing: 0.2rem;
+        color: var(--color-black);
+    }
+
+    .animation-text {
+        margin-top: 5rem;
+        font-size: 1.3rem;
+        color: var(--color-black);
     }
 }

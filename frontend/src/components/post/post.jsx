@@ -1,5 +1,6 @@
 import Posts from "../../mocks/mocks.json"
-import { useContext, useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
+import { useContext } from "react";
 import { Context } from "../../context/context";
 import Home from "../home/home";
 
@@ -10,7 +11,11 @@ import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 
 function Post() {
-  const { useLocalStorage, loginValue, adminValue } = useContext(Context);
+  const { useLocalStorage, loginValue, adminValue, animationDone, tutorialDone } = useContext(Context)
+
+  if (!tutorialDone || !animationDone) {
+    return <Navigate to={"/"} />;
+  };
 
   const [userVotes, setUserVotes] = useLocalStorage("votes", []);
 
@@ -39,7 +44,7 @@ function Post() {
     Swal.fire({
       position: 'center',
       icon: 'success',
-      iconColor: 'var(--color-black)',
+      iconColor: 'black',
       title: 'Thanks for your vote',
       showConfirmButton: false,
       timer: 1500
@@ -66,7 +71,7 @@ function Post() {
     Swal.fire({
       position: 'center',
       icon: 'success',
-      iconColor: 'var(--color-black)',
+      iconColor: 'black',
       title: 'Thanks for your vote',
       showConfirmButton: false,
       timer: 1500
@@ -80,10 +85,10 @@ function Post() {
       function hider() {
         loader.style.display = "none";
       }
-      setInterval(hider, 1000);
+      setInterval(hider, 1100);
       loader.classList.add("animate__fadeOut");
     }
-  }, 1500);
+  }, 1000);
 
   if (!loginValue && !adminValue) {
     return <Home />

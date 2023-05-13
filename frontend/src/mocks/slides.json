@@ -1,27 +1,26 @@
 [
     {
         "id": 1,
-        "image": "/assets/icons/tutorial.jpg",
+        "image": "/assets/icons/icon-explore.png",
         "title": "Explore",
         "text": "Discover different styles and designs in our community."
     },
     {
         "id": 2,
-        "image": "/assets/icons/tutorial.jpg",
+        "image": "/assets/icons/icon-vote.png",
         "title": "Vote",
         "text": "Share your opinions on other users' posts."
     },
     {
         "id": 3,
-        "image": "/assets/icons/tutorial.jpg",
+        "image": "/assets/icons/icon-post.png",
         "title": "Post",
         "text": "Share your designs and receive votes from the community."
     },
     {
         "id": 4,
-        "image": "/assets/icons/tutorial.jpg",
+        "image": "/assets/icons/icon-share.png",
         "title": "Share",
-        "text": "The community is here to support you and share ideas!",
-        "button": "Start"
+        "text": "The community is here to support you and share ideas!"
     }
 ]

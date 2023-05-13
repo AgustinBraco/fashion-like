@@ -1,7 +1,7 @@
 import Header from "../components/header/header.jsx";
 import Error from "../components/error/error.jsx";
 
-function ErrorRoot() {
+function ErrorRoute() {
     return (
         <div>
             <Header />
@@ -10,4 +10,4 @@ function ErrorRoot() {
     );
 };
 
-export default ErrorRoot;
+export default ErrorRoute;

@@ -14,13 +14,15 @@ html {
   font-size: 62.5%;
   // overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: var(--color-white);
+  transition: linear 1s all;
 }
 
 :root {
-  --color-main: #DFDBE0;
-  --color-secondary: #D5D0CD;
-  --color-grey: #CECECE;
-  --color-dgrey: #9F9D9D;
+  --color-first: #EEEEEE;
+  --color-second: #D5D0CD;
+  --color-third: #DFDBE0;
+  --color-fourth: #9F9D9D;
   --color-black: #000000;
   --color-white: #FFFFFF;
 }
@@ -32,7 +34,7 @@ html {
 
 // Selection
 ::selection {
-  background: var(--color-secondary);
+  background: var(--color-second);
   color: var(--color-black);
 }
 
@@ -51,7 +53,7 @@ top: 5rem;
 width: 1.6rem;
 height: 1.6rem;
 border-radius: 0.5rem;
-background: var(--color-main);
+background: var(--color-black);
 animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
@@ -103,9 +105,9 @@ animation: lds-ellipsis3 0.6s infinite;
 .loader {
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: var(--color-second);
   position: absolute;
-  z-index: 999999;
+  z-index: 9999999;
   top: 0;
   display: flex;
 }

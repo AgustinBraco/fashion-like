@@ -11,12 +11,12 @@ import Root from './routes/root.jsx';
 import FeedRoute from './routes/feed.jsx';
 import PostRoute from './routes/post.jsx';
 import AccountRoute from './routes/account.jsx';
-import ErrorRoot from './routes/error.jsx';
+import ErrorRoute from './routes/error.jsx';
 
 
 const router = createBrowserRouter([
   {
-    errorElement: <ErrorRoot />,
+    errorElement: <ErrorRoute />,
   },
   {
     path: "/",

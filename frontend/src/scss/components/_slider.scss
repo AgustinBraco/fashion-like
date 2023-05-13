@@ -1,40 +1,56 @@
 @import '../base/mixin';
 
 .swiper {
-    height: 90vh;
-    text-align: center;
+	width: 100vw;
+	height: 100vh;
+	text-align: center;
+	background-color: var(--color-white);
 
     .swiper-slide {
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
-        gap: 6rem;
         align-items: center;
+        background-color: var(--color-white);
+        height: 90vh;
+        gap: 5rem;
 
         .swiper-image {
-            width: 60%;
-            border-radius: 3rem;
+            width: 15rem;
+
+            &.dark {
+                filter: invert(1);
+            }
         }
 
         .swiper-title {
-            font-size: 2rem;
+            font-size: 2.1rem;
             font-weight: 600;
             margin-block: 3rem;
+            color: var(--color-black);
         }
 
         .swiper-text {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-inline: 4rem;
-        }
-
-        .swiper-button {
-            background-color: transparent;
-            border: none;
-            outline: none;
-            font-size: 2rem;
-            font-weight: 800;
-            text-decoration: underline;
+            color: var(--color-black);
         }
     }
-}
 
+    .swiper-button {
+        background: transparent;
+        border: 0;
+        outline: none;
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: var(--color-black);
+        position: absolute;
+        z-index: 9999;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .swiper-pagination {
+        margin-bottom: 4rem;
+    }
+}

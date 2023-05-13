@@ -1,0 +1,30 @@
+@import '../base/mixin';
+
+.footer-container {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 9999;
+
+    .footer-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-black);
+        border-radius: 3rem;
+        border: none;
+        outline: none;
+        width: 6rem;
+        height: 6rem;
+        transition: linear 1s all;
+
+        .footer-image-light {
+            width: 4rem;
+            filter: invert(1);
+        }
+
+        .footer-image-dark {
+            width: 4rem;
+        }
+    }
+}
